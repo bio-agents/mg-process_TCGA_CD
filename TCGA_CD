@@ -1,0 +1,29 @@
+#!/bin/bash
+
+REALPATH="$(realpath "$0")"
+BASEDIR="$(dirname "$REALPATH")"
+case "$BASEDIR" in
+	/*)
+		true
+		;;
+	*)
+		BASEDIR="${PWD}/$BASEDIR"
+		;;
+esac
+
+type -a docker > /dev/null
+
+if [ $? -ne 0 ] ; then
+	echo "UNCONFIGURED: No docker executable" 1>&2
+	exit 1
+fi
+
+PYBASEDIR="${BASEDIR}/.py2Env"
+# Is there a prepared Python environment??
+if [ -d "$PYBASEDIR" ] ; then
+	source "${PYBASEDIR}/bin/activate"
+	exec python "${BASEDIR}"/TCGA_CD.py "$@"
+else
+	echo "UNCONFIGURED: Python environment" 1>&2
+	exit 1
+fi
