@@ -1,31 +1,3 @@
-{
-    "output_files": [
-        {
-            "name": "metrics",
-            "data_type": "metrics",
-            "file_type": "TXT",
-            "sources": [
-                "/home/vre/tests/data/myGenes.txt"
-            ],
-            "meta_data": {
-                "agent": "TCGA_CD"
-            },
-            "taxon_id": 0,
-            "file_path": "/home/vre/test/run000/metrics.json"
-        },
-        {
-            "name": "tar_view",
-            "data_type": "agent_statistics",
-            "file_type": "TAR",
-            "sources": [
-                "/home/vre/tests/data/myGenes.txt"
-            ],
-            "meta_data": {
-                "agent": "TCGA_CD",
-            },
-            "taxon_id": 0,
-            "compressed" : "gzip",
-            "file_path": "/home/vre/test/run000/results.tar.gz"
-        }
-    ]
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:12f90957ee4c75cd5de2d0c045f3cb663f6335f3a8965c0d588f6cc527205973
+size 833
